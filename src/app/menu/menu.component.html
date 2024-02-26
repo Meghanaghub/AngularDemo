@@ -1,0 +1,29 @@
+<div class = "container">
+    <div class = "filters">    
+        <a class="button" (click)="filter='Hots'">Hots</a><!--Event binding-->
+        <a class="button" (click)="filter='Sweet'">Sweets</a>
+        <a class="button" (click)="filter='Lunch'">Lunch</a>
+        <a class="button" (click)="filter='Salads'">Salads</a>
+        <a class="button" (click)="filter='Snack'">Snack</a>
+        <a class="button" (click)="filter=''">All</a>
+    </div>
+
+    <ul class="dishes">
+        <li class="dishes-dish" *ngFor="let dish of getFilteredDishes()"><!--for loop for html components-->
+            <div class="dish">
+                <div class="dish-details">
+                    <img src="{{getImageUrl(dish)}}" [alt]="dish.name"/><!--String Interpolation and Attribute binding-->
+                    <div class="dish-info">
+                        <div class="name">Name : {{ dish.name }}</div>
+                        <div class="description">Description : {{ dish.description }}</div>
+                        <div class="category">Category : {{ dish.category }}</div>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="price">Price : ${{ dish.price.toFixed(2)}}</div>
+                    <button class="cta">Buy</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
