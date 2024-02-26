@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { IDish } from './dish.model';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [MenuComponent, NgFor],
+  imports: [MenuComponent, NgFor, NgIf],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
@@ -22,7 +22,7 @@ export class MenuComponent {
       imageName : "rasmalai.png",
       category : "Sweet",
       price : 50.0,
-      discount: 5.0
+      discount: 0.5
     },
     {
       id : 2,
@@ -31,7 +31,7 @@ export class MenuComponent {
       imageName : "rasagulla.png",
       category : "Sweet",
       price : 50.0,
-      discount: 5.0
+      discount: 0
     },
     {
       id : 3,
@@ -40,7 +40,7 @@ export class MenuComponent {
       imageName : "chicken-biryani.png",
       category : "Lunch",
       price : 150.0,
-      discount: 5.0
+      discount: 0.2
     },
     {
       id : 4,
@@ -49,7 +49,7 @@ export class MenuComponent {
       imageName : "samosa.png",
       category : "Snack",
       price : 20.0,
-      discount: 5.0
+      discount: 0
     },
   ]
   }
