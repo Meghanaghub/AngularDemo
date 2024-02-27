@@ -1,27 +1,44 @@
-.button{
-    color: white;
-    width: 70px;
-    height: 0p4x;
-    background-color:  rgb(27, 168, 171); 
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; /* Set flex-direction to column */
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between; /* Place buttons evenly */
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 25px 200px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .filters button {
+    width: 100px;
+  }
+  .dishes {
+    width: 100%; /* Make sure dishes take full width */
+  }
+
+  .dishes-dish {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    list-style: none;
+  }
+
+  .button{
+    background-color: orange;
+    padding: 5px 10px;
     border-radius: 2px;
-    padding: 5px;
     text-decoration: none;
-    margin-right: 10%;
-}
-.cta{
     color: white;
-    width: 70px;
-    height: 0p4x;
-    background-color: rgb(10, 143, 68);
-    border-radius: 2px;
-    padding: 5px;
-    text-decoration: none;
-    margin-right: 10%;
-}
-img{
-    height: 100px;
-    width : 200px;
-}
-.discount{
-    color: palevioletred;
-}
+  }
+
+
+
+  
+
+  

@@ -1,0 +1,18 @@
+<div class="dish">
+    <div class="dish-details">
+        <img src="{{getImageUrl(dish)}}" [alt]="dish.name"/><!--String Interpolation and Attribute binding-->
+        <div class="dish-info">
+            <div class="name">Name : {{ dish?.name }}</div> <!--'?' is safe navigation operator that is used to handle nulls-->
+            <div class="description">Description : {{ dish?.description }}</div>
+            <div class="category">Category : {{ dish?.category }}</div>
+        </div>
+    </div>
+    <div class="price">
+        <div 
+            [ngStyle]=" { color : dish.discount > 0 ? 'red' : ''}"
+            [ngClass]="getDiscountedDishes(dish)" >Price : ${{ dish.price.toFixed(2)}}</div>
+        <div *ngIf="dish.discount > 0" class="discount" >
+            Price : ${{(dish.price * (1-dish.discount)).toFixed(2) }}</div>
+        <button class="cta" (click)="addToCart(dish)">Buy</button>
+    </div>
+</div>

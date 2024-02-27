@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { IDish } from './dish.model';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import { DishComponent } from '../dish/dish.component';
 
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [MenuComponent, NgFor, NgIf],
+  imports: [MenuComponent, NgFor, NgIf, NgClass, NgStyle, DishComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
   dishes : IDish[];
   filter : string = '';
+  cart : IDish[] = [];
 
   constructor(){
     this.dishes = [{
@@ -54,13 +56,11 @@ export class MenuComponent {
   ]
   }
 
-  getImageUrl(dish : IDish){
-    return '/assets/Images/' + dish.imageName;
-  }
-
+ 
   getFilteredDishes(){
     return this.filter === ''
     ? this.dishes
     : this.dishes.filter((dish) => dish.category === this.filter);
   }
+
 }

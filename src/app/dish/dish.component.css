@@ -1,0 +1,35 @@
+.strikethrough{
+    font-size: 12px;
+    text-decoration: line-through;
+  }
+
+  .dish {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dish-details {
+    display: flex;
+  }
+  
+  .price {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .discount {
+    color: red; /* Change the color as needed */
+  }
+  
+  .cta {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+   
+  img{
+    margin-right: 20px;
+  }
