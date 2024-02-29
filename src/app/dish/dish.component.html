@@ -10,9 +10,9 @@
     <div class="price">
         <div 
             [ngStyle]=" { color : dish.discount > 0 ? 'red' : ''}"
-            [ngClass]="getDiscountedDishes(dish)" >Price : ${{ dish.price.toFixed(2)}}</div>
+            [ngClass]="getDiscountedDishes(dish)" >Price : {{ dish.price | currency : 'INR'}}</div>
         <div *ngIf="dish.discount > 0" class="discount" >
-            Price : ${{(dish.price * (1-dish.discount)).toFixed(2) }}</div>
-        <button class="cta" (click)="addToCart(dish)">Buy</button>
+            Price : {{(dish.price * (1-dish.discount)) | currency : 'INR'}}</div>
+        <button class="cta" (click)="buyButtonClicked(dish)">Buy</button>
     </div>
 </div>

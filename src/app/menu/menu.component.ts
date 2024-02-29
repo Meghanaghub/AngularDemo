@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IDish } from './dish.model';
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { DishComponent } from '../dish/dish.component';
+import { CartServiceService } from '../services/cart-service.service';
 
 
 @Component({
@@ -14,9 +15,11 @@ import { DishComponent } from '../dish/dish.component';
 export class MenuComponent {
   dishes : IDish[];
   filter : string = '';
-  cart : IDish[] = [];
-
-  constructor(){
+  // other way of injection, limitation: difficult to write unit tests
+  // private cartSrv : CartServiceService = inject(CartServiceService)
+  
+  // constructor dependency injection
+  constructor(private cartSrv : CartServiceService){
     this.dishes = [{
       id : 1,
       description : "This dish is made of malai",
@@ -55,7 +58,10 @@ export class MenuComponent {
     },
   ]
   }
-
+ 
+  addToCart(dish :  IDish){
+    this.cartSrv.add(dish);
+  }
  
   getFilteredDishes(){
     return this.filter === ''
