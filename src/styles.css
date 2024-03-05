@@ -1,4 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: white;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color : black;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a.active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid pink;
+}
+
+a :visited{
+    color : darkblue
+}
+
+a :hover{
+    color : lightblue
+}
+
+a.cta{
+    color: green;
+}
+
+img{
+    width:300px;
+    height: 150px;
+    margin-bottom : 5px;
+}
+
+.name{    
+    font-weight: bold;
+    font-size: medium;
+    color: deeppink;
+}

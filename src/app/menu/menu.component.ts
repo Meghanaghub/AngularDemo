@@ -1,22 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IDish } from './dish.model';
-import { NgFor, NgIf } from '@angular/common';
-import { DishDetailsComponent } from "../dish-details/dish-details.component";
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import { DishComponent } from '../dish/dish.component';
+import { CartServiceService } from '../services/cart-service.service';
 
 
 @Component({
-    selector: 'app-menu',
-    standalone: true,
-    templateUrl: './menu.component.html',
-    styleUrl: './menu.component.css',
-    imports: [MenuComponent, NgFor, NgIf, DishDetailsComponent]
+  selector: 'app-menu',
+  standalone: true,
+  imports: [MenuComponent, NgFor, NgIf, NgClass, NgStyle, DishComponent],
+  templateUrl: './menu.component.html',
+  styleUrl: './menu.component.css'
 })
 export class MenuComponent {
   dishes : IDish[];
   filter : string = '';
-  cart : IDish[] = [];
-
-  constructor(){
+  // other way of injection, limitation: difficult to write unit tests
+  // private cartSrv : CartServiceService = inject(CartServiceService)
+  
+  // constructor dependency injection
+  constructor(private cartSrv : CartServiceService){
     this.dishes = [{
       id : 1,
       description : "This dish is made of malai",
@@ -56,9 +59,8 @@ export class MenuComponent {
   ]
   }
 
-  addToCart(dish: IDish) {
-    this.cart.push(dish);
-    console.log(`product ${dish.name} added to cart`);
+  getImageUrl(dish : IDish){
+    return '/assets/Images/' + dish.imageName;
   }
  
   getFilteredDishes(){
@@ -66,4 +68,5 @@ export class MenuComponent {
     ? this.dishes
     : this.dishes.filter((dish) => dish.category === this.filter);
   }
+
 }

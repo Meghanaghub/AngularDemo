@@ -9,11 +9,8 @@
     </div>
 
     <ul class="dishes">
-        <li class="dishes-dish" *ngFor="let dish of getFilteredDishes()"><!--for loop for html components-->
-            <app-dish-details
-            [dish]="dish"
-            (buy)="addToCart(dish)"
-        ></app-dish-details>
+        <li class="dishes-dish" *ngFor="let currentdish of getFilteredDishes()"><!--for loop for html components-->
+            <app-dish [dish]="currentdish" (buy)="addToCart(currentdish)"></app-dish>
         </li>
     </ul>
 </div>
