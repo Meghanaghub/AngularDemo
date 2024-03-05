@@ -58,9 +58,9 @@ export class MenuComponent {
     },
   ]
   }
-
-  getImageUrl(dish : IDish){
-    return '/assets/Images/' + dish.imageName;
+ 
+  addToCart(dish :  IDish){
+    this.cartSrv.add(dish);
   }
  
   getFilteredDishes(){
