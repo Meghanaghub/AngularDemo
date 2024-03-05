@@ -1,0 +1,19 @@
+<div class="dish">
+    <div class="dish-details">
+        <img src="{{getImageUrl(dish)}}" [alt]="dish.name"/><!--String Interpolation and Attribute binding-->
+        <div class="dish-info">
+            <div class="name">Name : {{ dish.name }}</div> <!--'?' is safe navigation operator that is used to handle nulls-->
+            <div class="description">Description : {{ dish.description }}</div>
+            <div class="category">Category : {{ dish.category }}</div>
+        </div>
+    </div>
+    <div class="price">
+        <div [ngClass]="{ strikethrough: dish.discount > 0 }">
+            {{ dish.price | currency : "USD" }}
+          </div>
+          <div *ngIf="dish.discount > 0" class="discount">
+            {{ dish.price * (1 - dish.discount) | currency : "USD" }}
+          </div>
+          <button class="cta" (click)="buyButtonClicked(dish)">Buy</button>
+    </div>
+</div>

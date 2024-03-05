@@ -1,27 +1,28 @@
-.button{
-    color: white;
-    width: 70px;
-    height: 0p4x;
-    background-color:  rgb(27, 168, 171); 
-    border-radius: 2px;
-    padding: 5px;
-    text-decoration: none;
-    margin-right: 10%;
-}
-.cta{
-    color: white;
-    width: 70px;
-    height: 0p4x;
-    background-color: rgb(10, 143, 68);
-    border-radius: 2px;
-    padding: 5px;
-    text-decoration: none;
-    margin-right: 10%;
-}
-img{
-    height: 100px;
-    width : 200px;
-}
-.discount{
-    color: palevioletred;
-}
+.bold {
+    font-weight: bold;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 200px;
+  }
+  
+  .filters button {
+    width: 100px;
+  }
+  
+  .dishes {
+    margin: 0 100px;
+    border-top: 2px solid #999;
+  }
+  
+  .dish-item {
+    border-bottom: 2px solid #999;
+  }
+  
